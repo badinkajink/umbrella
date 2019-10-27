@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block headline %}
+  {{ school.SCHOOLNAME.title() }}
+{% endblock %}
+{% block subhead %}
+  {{ school.ADDRESS.title() }}, {{ school.city.title() }}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <p><strong>School type:</strong> {{ school.SCH_TYPE }}</p>
+    <p></p>
+    <p></p>
+</div>
+{% endblock %}
