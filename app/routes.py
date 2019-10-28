@@ -1,23 +1,7 @@
-# app.py
+from app import app
 from flask import Flask
 from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///schools.sqlite3'
-#app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-
-db = SQLAlchemy(app)
-
-db.Model.metadata.reflect(db.engine)
-
-class School(db.Model):
-    __tablename__ = 'schools'
-    __table_args__ = {'extend_existing': True}
-    LOC_CODE = db.Column(db.Text, primary_key=True)
-
-#print("Total number of schools is", School.query.count())
 
 @app.route("/")
 def index():  
@@ -75,6 +59,3 @@ def zip_list():
     zipcodes = [zipcode[0] for zipcode in zipcodes]
     zipcodes = sorted(list(set(zipcodes)))
     return render_template("zipcodes.html", zipcodes = zipcodes)
-
-if __name__ == '__main__':
-    app.run(debug=True)
