@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> 
+        umbrellA 
+    </title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="/static/styles/umbrella.css"/>
+    
+</head>
+<body>
+    
+    <div id="mapid"></div>
+        <div id="myform">
+            <!--action="/action_page.php"-->
+            <form id="form">
+                EVENT INFO 
+                <br><br><br> 
+                Name: <input type="text" id="event_name" required="True"> 
+                <br> <br> 
+                Description: <input type="text" id="event_description"> 
+                <br> <br> 
+                Time Start: <input type="datetime-local" id="time_start" required="True"> 
+                <br> <br> 
+                Time End: <input type="datetime-local" id="time_end" required="True"> 
+                <br> <br> 
+                Event Type: 
+                    <select id="dropdown">
+                        <option>General Interest</option>
+                        <option>Music</option>
+                        <option>Social</option>
+                        <option>Food & Drinks</option>
+                        <option>Political</option>
+                    </select>
+                <br><br>
+                <input type="radio" name = "status" id="private" value="private" checked> Private 
+                <br> <br> 
+                <input type="radio" name = "status" id="public" value="public"> Public 
+                <br> <br> 
+                <input type="submit" value="Submit" id='submit'>
+            </form>
+        </div>
+    <script src="/static/js/map1.js"> </script>
+</body>
+
+
+</html>
